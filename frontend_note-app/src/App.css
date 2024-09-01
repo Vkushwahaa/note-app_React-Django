@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-grow: 100%;
+}
+.textarea {
+  padding: 16px 14px 85px 10px;
+  width: 95.5%;
+  height: 70vh;
+  background-color: rgb(181, 123, 154);
+  border: none;
+  resize: none;
+  scrollbar-width: none;
+}
+textarea:active,
+textarea:focus {
+  outline: none;
+  border: none;
+}
+textarea::-webkit-scrollbar {
+  display: none;}
+
+.adjacent-list {
+  flex-basis: 30%;
+  background-color: white;
+  height: 595px;
+}
+
+.adjacent-note {
+  flex-basis: 70%;
+  background-color: deeppink;
+}
+.done-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+}

@@ -1,7 +1,15 @@
-import React from "react";
 
-const NoteList = () => {
-  return <div><h1>notesList</h1></div>;
+import ListItem from "./ListItem";
+import AddButton from "./AddButton";
+const NoteList = ({ notes }) => {
+  return (
+    <div className="notelist-container">
+      {notes.map((note) => (
+        <ListItem note={note} />
+      ))}
+      <AddButton />
+    </div>
+  );
 };
 
 export default NoteList;
