@@ -4,7 +4,7 @@ const AddButton = () => {
   return (
     <div>
       <Link to="/notes/new/">
-        <button>
+        <button className="floating-button">
           <i className="bi bi-plus-lg"></i>
         </button>
       </Link>

@@ -58,13 +58,21 @@ const SingleNote = ({ GetNotes, notes }) => {
   }, [id]);
   return (
     <div className="note-container">
+      <div>
+        <textarea
+          className="textarea-title"
+          value={note.title}
+          onChange={(e) => setNote({ ...note, title: e.target.value })}
+        ></textarea>
+      </div>
       <textarea
         className="textarea"
         value={note.body}
         onChange={(e) => setNote({ ...note, body: e.target.value })}
-      ></textarea>
+      >
+      </textarea>
       <button className="done-button" onClick={() => handlenote()}>
-        done
+       DONE
       </button>
     </div>
   );

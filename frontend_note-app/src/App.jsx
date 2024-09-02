@@ -18,19 +18,13 @@ function App() {
   return (
     <Router>
       <Header />
-      <div className="container">
-        <div className="adjacent-list">
-          <NoteList notes={notes} />
-        </div>
-        <div className="adjacent-note">
-          <Routes>
-            <Route
-              path="/notes/:id"
-              element={<SingleNote GetNotes={GetNotes} notes={notes} />}
-            />
-          </Routes>
-        </div>
-      </div>
+      <NoteList notes={notes} />
+      <Routes>
+        <Route
+          path="/notes/:id"
+          element={<SingleNote GetNotes={GetNotes} notes={notes} />}
+        />
+      </Routes>
     </Router>
   );
 }

@@ -1,11 +1,21 @@
-.container {
-  display: flex;
-  flex-grow: 100%;
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700");
+:root {
+  color-scheme: dark;
+  background-color: #242424;
+  --font-family: "Poppins", sans-serif;
+  --font-weight: 400;
+  --font-style: normal;
+}
+
+* {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: var(--font-style);
 }
 .textarea {
   padding: 16px 14px 85px 10px;
-  width: 95.5%;
-  height: 70vh;
+  width: 96%;
+  height: 60vh;
   background-color: rgb(181, 123, 154);
   border: none;
   resize: none;
@@ -17,21 +27,186 @@ textarea:focus {
   border: none;
 }
 textarea::-webkit-scrollbar {
-  display: none;}
-
-.adjacent-list {
-  flex-basis: 30%;
-  background-color: white;
-  height: 595px;
+  display: none;
 }
 
-.adjacent-note {
-  flex-basis: 70%;
-  background-color: deeppink;
-}
 .done-button {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 999;
   margin: 20px;
 }
+/*@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,700');
+
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --font-weight: 400;
+  --font-style: normal;
+}
+
+* {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: var(--font-style);
+}
+.container {
+  display: flex;
+  height: 83vh; 
+  width: 99vw;  }
+
+.adjacent-list {
+  flex-basis: 30%;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  overflow-y: auto; 
+  position: relative;
+  height: 100%;}
+
+.adjacent-note {
+  flex-basis: 70%;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box; 
+  overflow-y: hidden;
+}
+
+.notelist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.list-item {
+  background-color: rgb(30, 30, 30);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background-color: rgb(50, 50, 50);
+}
+
+.list-item p {
+  margin: 0;
+  color: white;
+}
+
+.textarea {
+  width: 100%;
+  background-color: rgb(50, 50, 50);
+  color: white;
+  padding: 10px; 
+  border: none;
+  resize: none;
+  flex: 1; 
+  overflow-y: auto;
+  box-sizing: border-box; 
+}
+
+textarea:focus {
+  outline: none;
+  border: 1px solid rgb(100, 100, 100);
+}
+.floating-button {
+  position: fixed;
+  height: 60px; 
+  width: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.floating-button:hover {
+  background-color: darkred; 
+}
+
+.done-button {
+  position: fixed;
+  align-self: flex-end;
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 999;
+}
+*/
+
+.header {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height:90px ;
+}
+.header h1{
+  font-size: 40px;
+  margin-left: 40px;
+  font-weight: 800;
+}
+
+/*Notelist left component*/
+.notelist-container {
+  background-color: #202020;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 88.1vh;
+  margin-top: 90px;
+}
+.list-item {
+  padding: 20px;
+  background-color: rgb(100, 100, 100);
+  color: aliceblue;
+  display: inline-block;
+  margin-bottom: 5px;
+  justify-content: space-around;
+  border-bottom: 1px gray;
+  width: 95%;
+  margin-top: 10px; 
+}
+.list-item p {
+  margin-top: -20px;
+  margin-bottom: -5px;
+  font-size: 15px;
+  max-width: 100%;
+}
+.list-item h2{
+  margin-top: -5px;
+}
+
+@media (max-width: 480px) {
+  .list-item p {
+    font-size: 0.6rem;
+  }
+  .list-item h2 {
+    font-size: 1rem;
+  }
+}
+
