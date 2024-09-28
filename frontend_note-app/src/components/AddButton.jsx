@@ -1,12 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-const AddButton = () => {
+const AddButton = ({ onAddNote }) => {
   return (
-    <Link to="/notes/new/">
-      <button className="addbutton">
-        <i className="bi bi-plus-lg"></i>
-      </button>
-    </Link>
+    <button onClick={()=>onAddNote()} className="addbutton">
+      <i className="bi bi-plus-lg"></i>
+    </button>
   );
 };
 

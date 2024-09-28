@@ -1,31 +1,49 @@
 import "./App.css";
-
-import React, { useEffect, useState } from "react";
+import { AuthProvider } from "./context/AuthContext";
+import React from "react";
 import Header from "./components/Header";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import SingleNote from "./components/SingleNote";
-import NoteList from "./components/NotesList";
+import {
+  HashRouter as Router, // Make sure to use HashRouter
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import PrivateRoute from "./utils/PrivateRoute";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+
 function App() {
-  const GetNotes = async () => {
-    let response = await fetch("http://127.0.0.1:8000/api/notes/");
-    let data = await response.json();
-    setNotes(data);
-  };
-  const [notes, setNotes] = useState([]);
-  useEffect(() => {
-    GetNotes();
-  }, []);
   return (
     <Router>
-      <Header />
-      <NoteList notes={notes} />
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
+    </Router>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+
+  return (
+    <>
+      {location.pathname !== "/login" && location.pathname !== "/register" && (
+        <Header />
+      )}
       <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route
-          path="/notes/:id"
-          element={<SingleNote GetNotes={GetNotes} notes={notes} />}
+          path="/home"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
         />
       </Routes>
-    </Router>
+    </>
   );
 }
 
