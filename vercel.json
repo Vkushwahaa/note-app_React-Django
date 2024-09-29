@@ -13,7 +13,8 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "frontend_note-app/dist",
-        "buildCommand": "npm install && npm run build"
+        "buildCommand": "npm install && npm run build",
+        "outputDirectory": "frontend_note-app/dist"
       }
     }
   ],
