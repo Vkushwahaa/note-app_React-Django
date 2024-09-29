@@ -9,7 +9,7 @@
       }
     },
     {
-      "src": "note_app",
+      "src": "note_app/manage.py",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "staticfiles"
