@@ -1,0 +1,16 @@
+{
+    
+"builds":[{
+        "src":"note_app/wsgi.py",
+        "use":"@vercel/python",
+        "config":{
+            ",maxLambdaize":"15mb","runtime":"python3.9"
+        }
+    }],
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest":"note_app/wsgi.py"
+        }
+    ]
+}
