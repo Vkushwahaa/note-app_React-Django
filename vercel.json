@@ -5,7 +5,8 @@
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
+        "runtime": "python3.11",
+        "installCommand": ""
       }
     },
     {
@@ -26,7 +27,6 @@
       "src": "/(.*)",
       "dest": "note_app/wsgi.py"
     },
-    {"src": "/assets/(.*)", "dest": "dist/assets/$1"}
-
+    { "src": "/assets/(.*)", "dest": "dist/assets/$1" }
   ]
 }
