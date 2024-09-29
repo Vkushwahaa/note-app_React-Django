@@ -25,6 +25,8 @@
     {
       "src": "/(.*)",
       "dest": "note_app/wsgi.py"
-    }
+    },
+    {"src": "/assets/(.*)", "dest": "dist/assets/$1"}
+
   ]
 }
