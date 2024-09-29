@@ -195,7 +195,7 @@ STATIC_URL = "static/"
 import os
 
 STATICFILES_DIRS = os.path.join(BASE_DIR,'frontend_note-app','dist'),
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR,'static/assets')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
