@@ -13,7 +13,7 @@
       "src": "frontend_note-app/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/assets",
+        "distDir": "dist",
         "buildCommand": "npm install && npm run build"
       }
     }
