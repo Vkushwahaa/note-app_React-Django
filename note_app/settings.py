@@ -129,7 +129,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            BASE_DIR.joinpath('frontend_note-app', 'dist')
+            BASE_DIR.joinpath('note-app')
             ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -195,7 +195,7 @@ STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
-BASE_DIR.joinpath('frontend_note-app','dist'),]
+BASE_DIR.joinpath('note_app','static'),]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
