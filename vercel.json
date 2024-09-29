@@ -20,7 +20,7 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/frontend_note-app/dist/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
