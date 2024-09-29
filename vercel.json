@@ -4,12 +4,23 @@
       "src": "note_app/wsgi.py",
       "use": "@vercel/python",
       "config": {
-        ",maxLambdaize": "15mb",
+        "maxLambdaSize": "15mb",
         "runtime": "python3.9"
+      }
+    },
+    {
+      "src": "frontend_note-app/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend_note-app/dist"
       }
     }
   ],
   "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/frontend_note-app/dist/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "note_app/wsgi.py"
