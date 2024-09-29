@@ -9,18 +9,18 @@
       }
     },
     {
-      "src": "build_files.sh",
+      "src": "frontend_note-app/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "staticfiles",
-        "buildCommand": "./build_files.sh"
+        "distDir": "frontend_note-app",
+        "buildCommand": "npm install && npm run build"
       }
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/staticfiles/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",

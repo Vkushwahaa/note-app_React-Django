@@ -129,7 +129,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-                  BASE_DIR.joinpath('staticfiles')
+                  BASE_DIR.joinpath('frontend_note-app','dist')
             ],
         "APP_DIRS": True,
         "OPTIONS": {
