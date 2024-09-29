@@ -13,10 +13,6 @@
     {
       "src": "/(.*)",
       "dest": "note_app/wsgi.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "index.html"
     }
   ]
 }
