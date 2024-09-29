@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-=r#3gw1c&*vk5bf=7*bch2v8kc#7l=rcl4!@(b1z82y0sa=ymy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','.now.sh']
 
 
 # Application definition
@@ -129,7 +129,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            BASE_DIR.joinpath('note-app')
+
             ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -195,7 +195,7 @@ STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
-BASE_DIR.joinpath('note_app','static'),]
+BASE_DIR.joinpath('note_app','staticfiles'),]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
