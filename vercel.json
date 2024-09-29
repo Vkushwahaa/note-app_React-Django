@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "note_app/wsgi.py",
@@ -14,18 +15,18 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
-        "buildCommand": "npm install && npm run build"
+        "buildCommand": "npm install && npm run build",
+        "routes": [
+          { "src": "/assets/(.*)", "dest": "dist/assets/$1" },
+          { "src": "/index-(.*)", "dest": "dist/index.html" },
+          { "src": "/(.*)", "dest": "dist/$1" }
+        ]
       }
     }
   ],
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "note_app/wsgi.py"
-    }
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/(.*)", "dest": "note_app/wsgi.py" },
+    { "src": "/assets/(.*)", "dest": "dist/assets/$1" }
   ]
 }
