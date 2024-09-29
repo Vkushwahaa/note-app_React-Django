@@ -16,17 +16,12 @@
       "config": {
         "distDir": "dist",
         "buildCommand": "npm install && npm run build",
-        "routes": [
-          { "src": "/assets/(.*)", "dest": "dist/assets/$1" },
-          { "src": "/index-(.*)", "dest": "dist/index.html" },
-          { "src": "/(.*)", "dest": "dist/$1" }
-        ]
+        "routes": [{ "src": "/(.*)", "dest": "frontend_note-app/dist/$1" }]
       }
     }
   ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/(.*)", "dest": "note_app/wsgi.py" },
-    { "src": "/assets/(.*)", "dest": "dist/assets/$1" }
+    { "src": "/static/(.*)", "dest": "static/$1" },
+    { "src": "/(.*)", "dest": "note_app/wsgi.py" }
   ]
 }
