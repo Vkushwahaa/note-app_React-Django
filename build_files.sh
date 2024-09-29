@@ -1,9 +1,7 @@
 echo "BUILD START"
   
+python manage.py collectstatic --noinput
 
-"python -m pip install -r requirements.txt"
-
-"python manage.py collectstatic --noinput"
-"python manage.py migrate"
+python manage.py migrate
 
 echo "BUILD END"
