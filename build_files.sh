@@ -1,7 +1,5 @@
 echo "BUILD START"
-
-
-source env\scripts\activate    
+  
 
 python -m pip install -r requirements.txt
 
