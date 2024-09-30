@@ -1,10 +1,7 @@
-echo "BUILD START"
-  
+#!/bin/bash
 
-python -m pip install -r requirements.txt
+# Navigate to the Django project directory
+cd note_app
 
+# Run the collectstatic command
 python manage.py collectstatic --noinput
-
-python manage.py migrate
-
-echo "BUILD END"
