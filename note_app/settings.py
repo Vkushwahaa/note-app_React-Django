@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-=r#3gw1c&*vk5bf=7*bch2v8kc#7l=rcl4!@(b1z82y0sa=ymy"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['13.201.72.126','.vercel.app','127.0.0.1','.now.sh','.amplifyapp.com','0.0.0.0']
 
@@ -129,7 +129,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-                  BASE_DIR.joinpath('frontend_note-app','dist')
+                  BASE_DIR.joinpath('static')
             ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -194,8 +194,8 @@ USE_TZ = True
 STATIC_URL = "/static/"
 import os
 
-STATICFILES_DIRS = os.path.join(BASE_DIR,'frontend_note-app','dist'),
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
+STATIC_ROOT = os.path.join(BASE_DIR,'static','assets')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
