@@ -2,6 +2,15 @@
   "version": 2,
   "builds": [
     {
+      "src": "note_app/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "Python3.11",
+        "installCommand": ""
+      }
+    },
+    {
       "src": "frontend_note-app/package.json",
       "use": "@vercel/static-build",
       "config": {
@@ -11,7 +20,11 @@
     },
     {
       "src": "build_files.sh",
-      "use": "@vercel/python"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles",
+        "buildCommand": "../build_files.sh"
+      }
     }
   ],
   "routes": [
