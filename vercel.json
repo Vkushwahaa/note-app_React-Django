@@ -15,7 +15,15 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "../static",
-        "buildCommand": "npm install && npm run build && bash ../build_files.sh"
+        "buildCommand": "npm install && npm run build"
+      }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles",
+        "buildCommand": "./build_files.sh"
       }
     }
   ],
