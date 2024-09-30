@@ -23,7 +23,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "staticfiles",
-        "buildCommand": "./build_files.sh"
+        "buildCommand": "../build_files.sh"
       }
     }
   ],
