@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "Checking Python installation..."
-which python
+which python3
 echo "Running collectstatic..."
-python manage.py collectstatic --noinput
+python3 manage.py collectstatic --noinput
