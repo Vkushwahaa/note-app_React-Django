@@ -7,7 +7,7 @@
       "config": {
         "maxLambdaSize": "15mb",
         "runtime": "Python3.11",
-        "installCommand": ""
+        "installCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
       }
     },
     {
@@ -22,5 +22,9 @@
   "routes": [
     { "src": "/static/(.*)", "dest": "/static/$1" },
     { "src": "/(.*)", "dest": "note_app/wsgi.py" }
-  ]
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "note_app.settings",
+    "SECRET_KEY": "your-secret-key-here"
+  }
 }
