@@ -216,3 +216,5 @@ CORS_ALLOWED_ORIGINS = [
 
 ]
 
+import pymysql
+pymysql.install_as_MySQLdb()
