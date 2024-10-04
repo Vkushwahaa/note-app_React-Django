@@ -3,32 +3,13 @@
   "builds": [
     {
       "src": "note_app/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "Python3.11",
-        "installCommand": ""
-      }
-    },
-    {
-      "src": "frontend_note-app/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "../static",
-        "buildCommand": "npm install && npm run build"
-      }
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "staticfiles",
-        "buildCommand": "../build_files.sh"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/(.*)", "dest": "note_app/wsgi.py" }
+    {
+      "src": "/(.*)",
+      "dest": "note_app/wsgi.py"
+    }
   ]
 }
