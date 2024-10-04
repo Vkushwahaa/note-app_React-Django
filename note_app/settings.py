@@ -148,11 +148,19 @@ WSGI_APPLICATION = "note_app.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+import os
+from decouple import config
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config('DB_NAME'),        # MySQL Database name
+        'USER': config('DB_USER'),        # MySQL username
+        'PASSWORD': config('DB_PASSWORD'),  # MySQL password
+        'HOST': config('DB_HOST', default='localhost'),  # MySQL host, usually 'localhost'
+        'PORT': config('DB_PORT', default='3306'),       # MySQL port, typically 3306
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
