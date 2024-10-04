@@ -17,9 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.shortcuts import render
-from django.urls import re_path
-from django.conf import settings
-from django.conf.urls.static import static
 
 def index_view(request):
     return render(request, 'index.html')
@@ -28,4 +25,4 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/',include("api.urls")),
     path('auths/',include("auths.urls")),
-    path('',index_view,name="index")]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
