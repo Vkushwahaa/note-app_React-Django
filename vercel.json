@@ -7,10 +7,6 @@
       "config": {
         "pythonVersion": "3.11"
       }
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build"
     }
   ],
   "routes": [
@@ -18,5 +14,8 @@
       "src": "/(.*)",
       "dest": "note_app/wsgi.py"
     }
-  ]
+  ],
+  "hooks": {
+    "post-build": "python3 manage.py migrate"
+  }
 }
