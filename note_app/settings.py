@@ -211,7 +211,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://note-app.vercel.app",
-    "https://note-app-frontend-d5frl4mym-vinay-kushwahas-projects-7002aa5b.vercel.app"
-
+    "https://note-app-frontend-eight.vercel.app"
 ]
 
