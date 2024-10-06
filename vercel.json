@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "note_app/wsgi.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "pythonVersion": "3.11"
+      }
     },
     {
       "src": "build_files.sh",
