@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing dependencies"
-env/bin/activate
+env/scripts/activate
 
 echo "Installing dependencies"
 python3 -m pip install -r requirements.txt

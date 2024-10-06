@@ -7,6 +7,10 @@
       "config": {
         "pythonVersion": "3.11"
       }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
