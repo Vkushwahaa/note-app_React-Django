@@ -9,4 +9,6 @@ python3 manage.py collectstatic
 
 echo "Making migrations"
 python3 manage.py makemigrations
+
+echo  "run migratuins"
 python3 manage.py migrate
