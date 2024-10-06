@@ -18,6 +18,7 @@ try:
     from django import setup
     setup()
     call_command('migrate')  # Run migrations
+    print("ran successfully")
 except Exception as e:
     print(f"Error running migrations: {e}")
     
