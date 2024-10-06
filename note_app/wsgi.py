@@ -21,6 +21,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "note_app.settings")
 try:
     from django import setup
     setup()
+    logger.info("Django setup completed successfully.")
     
     # Log that we are about to run migrations
     logger.info("Running migrations...")
@@ -28,7 +29,8 @@ try:
     call_command('migrate')  # Run migrations
     logger.info("Migrations ran successfully")
 except Exception as e:
-    print(f"Error running migrations: {e}")
+    logger.error(f"Error running migrations: {e}")
+
     
 application = get_wsgi_application()
 
