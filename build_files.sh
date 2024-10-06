@@ -1,3 +1,10 @@
 #!/bin/bash
+
+echo "Installing dependencies"
+env/bin/activate
+
+echo "Installing dependencies"
+pip install -r requirements.txt
+
 echo "Making migrations"
-python3 manage.py migrate  # Replace with the appropriate version if needed
+python3 manage.py migrate
