@@ -17,8 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+from django.http import JsonResponse
+
+def home_view(request):
+    return JsonResponse({"message": "Welcome to the Note App API!"})
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('', home_view, name='home'),
     path('api-auth/', include('rest_framework.urls')),
     path('api/',include("api.urls")),
     path('auths/',include("auths.urls")),
